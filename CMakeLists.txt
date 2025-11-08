@@ -13,4 +13,5 @@ include_directories(.)
 add_executable(prog2_lab3
         datarow.cpp
         datarow.h
+        generator.cpp
         main.cpp)

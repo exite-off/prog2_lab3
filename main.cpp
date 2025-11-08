@@ -1,18 +1,17 @@
-﻿#include <iostream>
-#include "generator.cpp"
+﻿// Author: Vitalii Fedin, K-26. Variant - 2. Compiler - MSVC.
+
+#include <iostream>
+#include <vector>
+#include "datarow.h"
+
+void generateFile(const std::string &filename, int n, const std::vector<int> &freqs);
 
 int main() {
-    std::string filename = "data.txt";
-    int n = 100;
-    std::vector<int> freqs = {40, 5, 5, 5, 45};
-
-    try {
-        generateFile(filename, n, freqs);
-        std::cout << "File generated successfully: " << filename << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return 1;
-    }
+    DataRow data;
+    std::cout << data.get(0) << std::endl;
+    data.set(0, 34);
+    data.set(1, 56);
+    std::cout << std::string(data);
 
     return 0;
 }
