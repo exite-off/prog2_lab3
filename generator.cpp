@@ -27,9 +27,9 @@ void generateFile(const std::string &filename, int n, const std::vector<int> &fr
     for (int i = 0; i < n; ++i) {
         int r = dis(gen);
         if (r <= relative_freqs[0]) {f << "read 0\n";}
-        else if (r <= relative_freqs[1]) {f << "write 0 " << 11 << "\n";}
+        else if (r <= relative_freqs[1]) {f << "write 0 11" << "\n";}
         else if (r <= relative_freqs[2]) {f << "read 1\n";}
-        else if (r <= relative_freqs[3]) {f << "write 1 " << 12 << "\n";}
+        else if (r <= relative_freqs[3]) {f << "write 1 12" << "\n";}
         else {f << "string\n";}
     }
     f.close();

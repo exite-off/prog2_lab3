@@ -9,11 +9,17 @@ DataRow::DataRow() {
 }
 
 int DataRow::get(int index) const {
+    if (index < 0 || index >= 2) {
+        throw std::out_of_range("index out of range");
+    }
     std::lock_guard lock(mtx[index]);
     return fields[index];
 }
 
 void DataRow::set(int index, int value) {
+    if (index < 0 || index >= 2) {
+        throw std::out_of_range("index out of range");
+    }
     std::lock_guard lock(mtx[index]);
     fields[index] = value;
 }
